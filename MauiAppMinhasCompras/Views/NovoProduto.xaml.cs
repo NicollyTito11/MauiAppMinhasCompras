@@ -4,7 +4,9 @@ namespace MauiAppMinhasCompras.Views;
 
 public partial class NovoProduto : ContentPage
 {
-	public NovoProduto()
+    private object txt_Quantidade;
+
+    public NovoProduto()
 	{
 		InitializeComponent();
 	}
@@ -20,7 +22,7 @@ public partial class NovoProduto : ContentPage
 				Preco = Convert.ToDouble(txt_preco.Text)
 			};
 
-			await App.Db.Insert(p);
+			await App.Db.Update(p);
 			await DisplayAlert("Sucesso!", "Registro Inserido", "OK");
 
 		} catch (Exception ex) 
