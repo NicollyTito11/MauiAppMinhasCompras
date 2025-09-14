@@ -25,6 +25,7 @@ public partial class ListaProduto : ContentPage
     private async Task CarregarProdutos()
     {
         Lista.Clear();
+
         List<Produto> tmp = await App.Db.Getall();
         tmp.ForEach(p => Lista.Add(p));
     }
